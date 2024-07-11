@@ -1,5 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-    font-family: 'Roboto', sans-serif;
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400; /* Adjust font weight as needed */
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap'); 
 }
-  
+
+body {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 1) 100%);
+    font-family: 'Inter', sans-serif; /* Apply Inter font or preferred font-family */
+    min-height: 100vh; 
+
+}
