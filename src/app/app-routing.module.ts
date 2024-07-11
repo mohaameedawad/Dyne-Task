@@ -10,7 +10,14 @@ const routes: Routes = [
     path: 'menu', 
     loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule) 
   },
-  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) }
+  { 
+    path: 'items', 
+    loadChildren: () => import('./items/items.module').then(m => m.ItemsModule) 
+  },
+  { 
+    path: 'cart', 
+    loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) 
+  }
 ];
 
 @NgModule({
