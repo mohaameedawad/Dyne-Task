@@ -48,6 +48,11 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }] ,
               "budgets": [
                 {
                   "type": "initial",
@@ -63,6 +68,11 @@
               "outputHashing": "all"
             },
             "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }] ,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -86,6 +96,11 @@
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
+          "fileReplacements": [
+            {
+              "replace": "src/environments/environment.ts",
+              "with": "src/environments/environment.test.ts"
+            }] ,
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
