@@ -10,7 +10,8 @@ import { HeaderComponent } from '../standalone-components/header/header.componen
   imports: [
     CommonModule,
     RouterModule,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   exports: [
     RouterModule,
