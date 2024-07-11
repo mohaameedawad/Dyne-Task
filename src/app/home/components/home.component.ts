@@ -7,17 +7,20 @@ import { HomeService } from '../services/home.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
-  constructor(private service: HomeService) {
-    
+
+  restaurants: any[] = [];
+
+  constructor(private service: HomeService) { }
+
+  ngOnInit(): void {
+    this.getRestaurantsList();
   }
-ngOnInit(): void {
-  this.getRestaurantsList();
-}
-getRestaurantsList() {
-  this.service.getRestaurantsList().subscribe((res: any) => {
-    console.log(res)
-  }   
-)
-}
+  
+  getRestaurantsList() {
+    this.service.getRestaurantsList().subscribe((res: any) => {
+      console.log(res)
+      this.restaurants = res
+    })
+  }
 
 }

@@ -1,0 +1,21 @@
+
+.card {
+    overflow: hidden;
+  }
+  
+  .menus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .menu-card {
+    width: 48%;
+    text-align: center;
+  }
+  
+  .menu-card img {
+    width: 100%;
+    height: auto;
+  }
+  
