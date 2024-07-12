@@ -40,6 +40,7 @@ export class CartComponent {
         this.router.navigate(['/home'])
       }, 2000);
       localStorage.removeItem('cartItems')
+      this.sharedeService.cartItems = []
       this.sharedeService.updateCartQuantity(true)
     },
     (error: Error) => {
@@ -51,6 +52,7 @@ export class CartComponent {
         this.router.navigate(['/home'])
       }, 2000);
       localStorage.removeItem('cartItems')
+      this.sharedeService.cartItems = []
       this.sharedeService.updateCartQuantity(true)
     }
   ) 
