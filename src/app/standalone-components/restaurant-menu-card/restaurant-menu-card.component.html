@@ -1,6 +1,7 @@
 <!-- restaurant-menu-card.component.html -->
 
-<div class="card restaurant-card shadow-sm" [ngStyle]="{'background-image': 'url(' + restaurant.restaurantBackground + ')'}">
+<div *ngIf="isRestaurant"  class="card restaurant-card shadow-sm" 
+        [ngStyle]="{'background-image': 'url(' + restaurant.restaurantBackground + ')'}">
     <div class="card-body d-flex flex-column justify-content-end">
         <div class="titleBox">
             <div class="title">
@@ -10,5 +11,12 @@
                 <span *ngFor="let tag of restaurant.tags" class="badge bg-light text-dark me-1">{{ tag }}</span>
             </div>
         </div>
+    </div>
+</div>
+
+<div *ngIf="!isRestaurant" class="card restaurant-card shadow-sm" (click)="navigationToItems()"
+    [ngStyle]="{'background-image': 'url(' + menu.background + ')'}">
+    <div class="card-body-menu d-flex justify-content-center align-items-center">
+                <div menu>{{ menu.name }}</div>
     </div>
 </div>

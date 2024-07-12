@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-menu-card',
@@ -10,5 +11,13 @@ import { Component, Input } from '@angular/core';
 })
 export class RestaurantMenuCardComponent {
   @Input() restaurant: any;
+  @Input() menu: any;
+  @Input() isRestaurant: any;
+
+  constructor(private router: Router) {}
+
+  navigationToItems() {
+    this.router.navigate(['/items', this.menu.id]);
+  }
 
 }

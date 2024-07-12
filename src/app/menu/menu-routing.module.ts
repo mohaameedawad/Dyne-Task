@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
   {
     path: '', 
-    redirectTo: '',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
     path: ':id', 
     component: MenuComponent 
   },
+  {
+    path: '**',
+    redirectTo: '/home'
+  }
 ];
 
 @NgModule({
