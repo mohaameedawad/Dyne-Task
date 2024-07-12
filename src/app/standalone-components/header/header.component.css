@@ -1,0 +1,24 @@
+.navbar {
+    height: 80px; /* Set the desired height */
+    background-color: transparent !important; /* Ensure background is transparent */
+}
+
+.navbar-brand {
+    color: black; /* Text color */
+    font-family: 'Inter', sans-serif; 
+    font-size: 20px; 
+    font-weight: 600; 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    background-image: url('https://s3-alpha-sig.figma.com/img/d439/d683/2c7ff5f2f5b2c83da53bbb3bc7caee82?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VbGRrn3GX-m2yIvw8rS~rDIDZuN0-p1UiTFlcb3DrOd2D9dPC0KFCnbptOYKpgyV7aDUEaxqeX~y991U5ChCEX02j8rjXnltNqyZ2m7-rt5x~9NcTrl3stnuwWZhYjMaltATvnkGhZ9RDX6BdgE17fPoWPbqbeRp-gwLPnoruEhS-aQAbeAy~ja7hsRh77WJtjjc5CDOclkc7HSLUBK4z2DMrupWBbuca1ZanzIGmZpwtaRIk3c1TAOrQJrfzpfK2SnN51V1UPjHIiBbLF909zugKrijVR2PN-y2M9lZCGI9yLPidXIvf9WIoqV3TA0OQu~0geDMDGoNE2NqpSknDQ__');
+    width: 30px; /* Adjust width and height as needed */
+    height: 30px;
+    background-size: cover;
+}
