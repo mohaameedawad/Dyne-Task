@@ -1,0 +1,24 @@
+@if (orderedSuccessfully) {
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Your order has been successfully sent!
+      </div> 
+}
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 mb-3" *ngFor="let item of cartItems">
+      <app-item-card [item]="item" [isCartPage]="true"></app-item-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 mb-3">
+        <button mat-raised-button class="order-button" (click)="PlaceOrder()">
+          <div class="order-div">
+            Order
+          </div>
+          <div class="total-price">
+            {{totalCartPrice}} EGP 
+          </div></button>
+
+    </div>
+  </div>

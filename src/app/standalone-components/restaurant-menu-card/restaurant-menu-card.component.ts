@@ -23,12 +23,12 @@ export class RestaurantMenuCardComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    console.log('menu', this.menu)
   }
   
   navigationToItems() {
     this.sharedService.updateHeaderTitle(this.menu.name);
     this.sharedService.updateMenuData(this.menu);
+    this.sharedService.updateItemsData(this.menu.id);
     this.router.navigate(['/items', this.menu.id]);
     
   }

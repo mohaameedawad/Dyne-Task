@@ -8,6 +8,17 @@
     display: flex; /* Use flexbox for layout */
   }
   
+  .disable {
+    opacity: 0.5;
+    pointer-events: none; 
+  }
+
+  .disable-img {
+    opacity: 0.5;
+    /* position: relative; */
+    pointer-events: none; 
+  }
+
   .custom-card-img {
     width: 35%;
     border-radius: 5px;
@@ -66,4 +77,11 @@
     font-size: 30px;
     position: absolute;
     top: -11px;
+  }
+
+  .unavailable {
+    font-size: 16px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
   }

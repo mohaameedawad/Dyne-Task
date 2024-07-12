@@ -15,8 +15,9 @@ export class MenuComponent implements OnInit {
   constructor(private sharedService: SharedService,
               private menuService: MenuService,
               private router: ActivatedRoute,
-              private route: Router
-            ) { }
+            ) { 
+
+            }
 
   ngOnInit(): void {
     this.getMenuRestaurantIB();
@@ -29,11 +30,9 @@ export class MenuComponent implements OnInit {
         const id = params['id'];
         const restaurant = res.find((r: any) => r.id == id);
         
-        if (restaurant) {
+        if (restaurant) 
           this.menus = restaurant.menus;
-        } else {
-          // this.route.navigate(['home']);
-        }
+        
       });
     });
   }

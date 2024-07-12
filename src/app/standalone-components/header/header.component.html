@@ -3,32 +3,44 @@
         <div>
             
             <!-- Back arrow icon -->
-             <a *ngIf="!isHomePage"  class="text-decoration-none">
+            @if (!isHomePage) {
+
+             <a  class="text-decoration-none">
                  <img src="https://s3-alpha-sig.figma.com/img/d26c/62bc/d8328e70b85c772d1ee42c18ada7d751?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Jil7M-g9ghz8XMotqxdvPru~bspzEozY~GvJa7LfxFN3y6Wk0VC8ZIOlJYXtYY7144c-C7iB0SwQcuZJh3Ty1fgRRtzGDBGEm-f~8ilchAZGyKBpI200h2vemjkiWstKD9g1Lg-i-UTiVqwlpF3D1q03CoTat3X6jX8SDvOJkX1wsufd~ukZ~gbJ6msldSH05yXe-zdZNb4JXJRvEJCXzkWX3gm5nTDhEcuiBa2G4TVRYqQL4loiflCGI0dITjPIYtGr5HErjb-R1WH30ArAqc1aPu7CApL-CqpftiUAUQ55-WGRAknKwWliNWyIFgNFj1houL28CB7kMmdKtt4ZYA__"
-                  alt="Back" width="20" height="20" style="margin-bottom: 6px;" (click)="navigateBack()">
+                  alt="Back" width="20" height="20" style="margin-bottom: 6px;cursor: pointer;" (click)="navigateBack()">
                 </a>
                 
+              }    
                 <!-- Navbar brand  -->
                 <a class="navbar-brand me-2">
                     {{ currentHeaderTitle }}
                 </a>
-            </div>
+        </div>
         
              <!-- Cart icon with badge (only on items page) -->
-    <div *ngIf="isItemsPage" class="position-relative">
+    @if (isItemsPage) {
+      <div class="position-relative"  >
         <img src="https://s3-alpha-sig.figma.com/img/996e/6365/279b1b8dd6ee02d40165267a79ed5583?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NGmhXvcyfAk~~MmZ1E~a2F-CCjbBhSiHunA82pc4AWwED~-0jFMTFv0qHZThcO8J-oNMgC9Q-8Aq9gdDd21HO~byKArKfJjedem-dJJuPF~Wic2l6gKKd58PzB1lkpO7ndPKGqqAvZ51eM4Eo-BFyq7VfgkwSts88LKQNbr4JH-Eg0otV9MBCuzF3SmnigCxhs1eDU9knp5ddOjDbSJuRcnlaber-iZpunM4u1CJAq367vyzF44IlPy~a5wm8bUR5WkPh2tAn0DuA6AEXPLq9imJLiTlO1D71dzLuPZYXs6fmvkO9obIBu92eGrxlhHHWcKzT7iYjm9Ac14Og35wpg__"
-          alt="Cart" width="30" height="30">
-        <span class="position-absolute top-0 start-100 
-                     badge rounded-circle bg-danger text-white" style="transform: translate(-60%, -50%);">
-          <!-- {{ cartItemCount }} -->1
-
-        </span>
+          alt="Cart" width="30" height="30" 
+          style="cursor: pointer;" routerLink="/cart"
+          [style.pointer-events]="cartItemCount > 0 ? 'auto' : 'none'" />
+          
+         
+          @if (cartItemCount > 0) {
+            <span class="position-absolute top-0 start-100 
+              badge rounded-circle bg-danger text-white" style="transform: translate(-60%, -50%);">
+              {{ cartItemCount }}
+            </span>
+          }
       </div>
-
+    }
         <!-- Navbar toggler (only on home page) -->
-        <button *ngIf="isHomePage" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
+        @if (isHomePage) {
+          <button class="navbar-toggler border-0" 
+                  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+        }
     </div>
 </nav>

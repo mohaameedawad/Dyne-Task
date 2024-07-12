@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { SharedService } from '../../../shared/services/sharedservice';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +13,15 @@ export class HomeComponent implements OnInit{
   restaurants: any[] = [];
 
   constructor(private homeservice: HomeService,
-              private sharedService: SharedService
-  ) { }
+              private sharedService: SharedService,
+  ) { 
+    console.log('home page')
+    this.updateNavBarBrand("Restaurants" , true)
+  }
 
   ngOnInit(): void {
     this.getRestaurantsList();
-    this.updateNavBarBrand("Restaurants" , true)
+
   }
   
   getRestaurantsList() {
@@ -31,7 +35,6 @@ export class HomeComponent implements OnInit{
       this.sharedService.updateRestaurantData(restaurant)
     }
     this.sharedService.updateHeaderTitle(restaurant.name, isHomePage);
-    console.log(restaurant )
   }
 
 }
