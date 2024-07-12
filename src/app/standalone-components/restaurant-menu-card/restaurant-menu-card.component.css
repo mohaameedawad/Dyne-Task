@@ -7,7 +7,9 @@
     left: 16px;
     border-radius: 5px 0px 0px 0px;
 }
-
+.card {
+    border: none;
+}
 .restaurant-card {
     width: 163.73px;
     height: 262.71px;
@@ -25,10 +27,20 @@
 .card-body {
     position: absolute;
     top: 0;
-    border-radius: 3px;
+    border-radius: 5px;
     height: 100%;
     width: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 17.98%, rgba(0, 0, 0, 0.8) 77.86%);
+    padding: 8px;
+}
+
+.card-body-menu {
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5) ;
     padding: 8px;
 }
 
