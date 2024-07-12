@@ -30,7 +30,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
       this.id = param['id'];
       
       this.itemsService.getItemsByMenuIB(this.id).subscribe((res: any) => {
-        console.log(res)
         this.items = res
         
       })
@@ -42,7 +41,6 @@ export class ItemsComponent implements OnInit, OnDestroy {
     if (index !== -1) {
       this.items[index].quantity = item.quantity;
     }
-    console.log('Quantity updated:', item);
   }
   
   ngOnDestroy(): void {
