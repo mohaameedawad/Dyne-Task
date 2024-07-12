@@ -1,12 +1,10 @@
-
- <!-- home.component.html -->
-
- <div class="container">
-    <div class="row">
-      <div *ngFor="let menu of menus" class="col-6 col-md-3 d-flex justify-content-center ">
-        <app-restaurant-menu-card [menu]="menu" [isRestaurant]="false"
-             ></app-restaurant-menu-card>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-3 d-flex justify-content-center"
+         *ngFor="let menu of menus; let i = index">
+      <app-restaurant-menu-card [menu]="menu" 
+                                [isRestaurant]="false">
+      </app-restaurant-menu-card>
     </div>
   </div>
-  
+</div>

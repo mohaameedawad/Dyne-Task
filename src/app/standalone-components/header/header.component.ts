@@ -14,22 +14,26 @@ import { filter } from 'rxjs';
 })
 export class HeaderComponent {
 
-   currentHeaderTitle!: string ;
+   currentHeaderTitle: string = 'Restaurants';
    isHomePage: boolean = true;
-
+   isItemsPage: boolean = false;
+      
+   
   constructor(private sharedService : SharedService,
-              private router: Router
-  ) { 
-    this.gettingHeaderTitle();
-
-  }
+              private router: Router) {}
   
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.gettingHeaderTitle();
+    this.sharedService.isItemsPageBrandSubject.subscribe((res: boolean) => {
+      this.isItemsPage = res
+    })
+   }
 
   gettingHeaderTitle() {
-
     this.sharedService.navbarBrandSubject.subscribe((res: any) => {
-      this.currentHeaderTitle = res.HeaderTitle
+      if(res.HeaderTitle)
+         this.currentHeaderTitle = res.HeaderTitle
+      
       this.isHomePage = res.isHomePage;
     })
   }
@@ -37,8 +41,14 @@ export class HeaderComponent {
   navigateBack(): void {
       const currentUrl = this.router.url;
       switch (true) {
-        case currentUrl.startsWith('/menu'):
-          this.router.navigate(['/home']);
+          case currentUrl.startsWith('/menu'):
+            this.router.navigate(['/home']);
+            this.currentHeaderTitle = 'Restaurants';
+          break;
+          case currentUrl.startsWith('/items'):
+            var restaurant = this.sharedService.getRestaurantDataFromLocalStorage();
+            this.router.navigate(['/menu', restaurant.id]);
+            this.currentHeaderTitle = this.sharedService.getRestaurantDataFromLocalStorage().name;
           break;
         default:
           break;

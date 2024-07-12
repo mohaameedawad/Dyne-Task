@@ -6,7 +6,7 @@
       <div *ngFor="let restaurant of restaurants" class="col-6 col-md-3 d-flex justify-content-center ">
         <app-restaurant-menu-card [restaurant]="restaurant" [isRestaurant]="true"
              routerLink="/menu/{{restaurant.id}}" 
-             (click)="updateNavBarBrand( restaurant.name,  false)"></app-restaurant-menu-card>
+             (click)="updateNavBarBrand( restaurant,  false)"></app-restaurant-menu-card>
       </div>
     </div>
   </div>
