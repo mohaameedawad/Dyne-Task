@@ -26,8 +26,12 @@ export class HomeComponent implements OnInit{
     })
   }
   
-  updateNavBarBrand(title: string, isHomePage: boolean): void {
-    this.sharedService.updateHeaderTitle(title, isHomePage);
+  updateNavBarBrand(restaurant: any, isHomePage: boolean): void {
+    if (typeof restaurant !== 'string') {
+      this.sharedService.updateRestaurantData(restaurant)
+    }
+    this.sharedService.updateHeaderTitle(restaurant.name, isHomePage);
+    console.log(restaurant )
   }
 
 }

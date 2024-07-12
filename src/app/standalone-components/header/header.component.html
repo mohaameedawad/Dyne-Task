@@ -14,9 +14,21 @@
                 </a>
             </div>
         
+             <!-- Cart icon with badge (only on items page) -->
+    <div *ngIf="isItemsPage" class="position-relative">
+        <img src="https://s3-alpha-sig.figma.com/img/996e/6365/279b1b8dd6ee02d40165267a79ed5583?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NGmhXvcyfAk~~MmZ1E~a2F-CCjbBhSiHunA82pc4AWwED~-0jFMTFv0qHZThcO8J-oNMgC9Q-8Aq9gdDd21HO~byKArKfJjedem-dJJuPF~Wic2l6gKKd58PzB1lkpO7ndPKGqqAvZ51eM4Eo-BFyq7VfgkwSts88LKQNbr4JH-Eg0otV9MBCuzF3SmnigCxhs1eDU9knp5ddOjDbSJuRcnlaber-iZpunM4u1CJAq367vyzF44IlPy~a5wm8bUR5WkPh2tAn0DuA6AEXPLq9imJLiTlO1D71dzLuPZYXs6fmvkO9obIBu92eGrxlhHHWcKzT7iYjm9Ac14Og35wpg__"
+          alt="Cart" width="30" height="30">
+        <span class="position-absolute top-0 start-100 
+                     badge rounded-circle bg-danger text-white" style="transform: translate(-60%, -50%);">
+          <!-- {{ cartItemCount }} -->1
+
+        </span>
+      </div>
+
         <!-- Navbar toggler (only on home page) -->
         <button *ngIf="isHomePage" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
     </div>
 </nav>
