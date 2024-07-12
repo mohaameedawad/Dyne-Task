@@ -3,8 +3,10 @@
 
 <div class="container">
     <div class="row">
-      <div *ngFor="let restaurant of restaurants" class="col-6 col-md-3 d-flex justify-content-center mb-3">
-        <app-restaurant-menu-card [restaurant]="restaurant"></app-restaurant-menu-card>
+      <div *ngFor="let restaurant of restaurants" class="col-6 col-md-3 d-flex justify-content-center ">
+        <app-restaurant-menu-card [restaurant]="restaurant"
+             routerLink="/menu/{{restaurant.id}}" 
+             (click)="updateNavBarBrand( restaurant.name,  false)"></app-restaurant-menu-card>
       </div>
     </div>
   </div>

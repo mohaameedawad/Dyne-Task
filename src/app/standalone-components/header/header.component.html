@@ -1,1 +1,22 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent" style="height: 80px;">
+    <div class="container d-flex align-items-center">
+        <div>
+            
+            <!-- Back arrow icon -->
+             <a *ngIf="!isHomePage"  class="text-decoration-none">
+                 <img src="https://s3-alpha-sig.figma.com/img/d26c/62bc/d8328e70b85c772d1ee42c18ada7d751?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Jil7M-g9ghz8XMotqxdvPru~bspzEozY~GvJa7LfxFN3y6Wk0VC8ZIOlJYXtYY7144c-C7iB0SwQcuZJh3Ty1fgRRtzGDBGEm-f~8ilchAZGyKBpI200h2vemjkiWstKD9g1Lg-i-UTiVqwlpF3D1q03CoTat3X6jX8SDvOJkX1wsufd~ukZ~gbJ6msldSH05yXe-zdZNb4JXJRvEJCXzkWX3gm5nTDhEcuiBa2G4TVRYqQL4loiflCGI0dITjPIYtGr5HErjb-R1WH30ArAqc1aPu7CApL-CqpftiUAUQ55-WGRAknKwWliNWyIFgNFj1houL28CB7kMmdKtt4ZYA__"
+                  alt="Back" width="20" height="20" style="margin-bottom: 6px;" (click)="navigateBack()">
+                </a>
+                
+                <!-- Navbar brand  -->
+                <a class="navbar-brand me-2">
+                    {{ currentHeaderTitle }}
+                </a>
+            </div>
+        
+        <!-- Navbar toggler (only on home page) -->
+        <button *ngIf="isHomePage" class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>

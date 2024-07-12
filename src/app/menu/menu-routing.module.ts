@@ -2,7 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu.component';
 
-const routes: Routes = [{ path: '', component: MenuComponent }];
+const routes: Routes = [
+  {
+    path: '', 
+    redirectTo: '',
+    pathMatch: 'full'
+  },
+  {
+    path: ':id', 
+    component: MenuComponent 
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
